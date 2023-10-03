@@ -34,7 +34,7 @@ class HomeView extends StatelessWidget {
                             color: Color.fromARGB(255, 23, 34, 23)),
                       ),
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
