@@ -14,28 +14,34 @@ class HomeView extends StatelessWidget {
         return Scaffold(
           body: Container(
             child: Center(
-              child: Stack(
-                children: [
-                  Image.asset(
-                    'images/bottlecap_10.png',
-                    width: 300,
-                    fit: BoxFit.cover,
-                  ),
-                  Container(
-                    width: 300,
-                    height: 300,
-                    padding: EdgeInsets.all(55),
-                    child: Center(
-                      child: Text(
-                        controller.giveMeMessage(),
-                        style: GoogleFonts.manrope(
-                            fontWeight: FontWeight.w800,
-                            fontSize: 20,
-                            color: Color.fromARGB(255, 23, 34, 23)),
+              child: GestureDetector(
+                onTap: () {
+                  controller.flipTheBottlecap();
+                },
+                child: Stack(
+                  children: [
+                    Image.asset(
+                      'images/bottlecap_${controller.bottlecapState}.png',
+                      width: 300,
+                      fit: BoxFit.cover,
+                    ),
+                    Container(
+                      width: 300,
+                      height: 300,
+                      padding: EdgeInsets.all(55),
+                      child: Center(
+                        child: Text(
+                          controller.giveMeMessage(),
+                          textAlign: TextAlign.center,
+                          style: GoogleFonts.manrope(
+                              fontWeight: FontWeight.w800,
+                              fontSize: 20,
+                              color: Color.fromARGB(255, 23, 34, 23)),
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
             width: double.infinity,
